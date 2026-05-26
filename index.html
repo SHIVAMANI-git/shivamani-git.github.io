@@ -1,91 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Your Full Name | Official Website</title>
-  <meta name="description" content="Official website of Your Full Name. Learn about my skills, work, projects, and contact details.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivamani Boddupally | AI, Cybersecurity & Digital Forensics</title>
+  <meta name="description" content="Official website of Shivamani Boddupally, M.Tech student in Artificial Intelligence and Data Science with specialization in Cyber Security. Skilled in Python, Linux, network security, mobile app analysis, digital forensics, and RAG systems." />
+  <meta name="keywords" content="Shivamani Boddupally, Artificial Intelligence, Data Science, Cyber Security, Digital Forensics, Python, Linux, Network Security, Mobile Security, NFSU Goa" />
+  <meta name="author" content="Shivamani Boddupally" />
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f5f5f5;
-      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
+      color: #1f2937;
+      background: #f3f4f6;
     }
 
     header {
-      background: #111;
+      background: linear-gradient(135deg, #111827, #1e3a8a);
       color: white;
+      padding: 70px 20px;
       text-align: center;
-      padding: 45px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 15px auto 0;
+      font-size: 18px;
+      color: #e5e7eb;
+    }
+
+    nav {
+      background: #111827;
+      text-align: center;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 25px 15px;
     }
 
     section {
       background: white;
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 25px;
-      border-radius: 10px;
+      margin: 22px 0;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     }
 
-    h1, h2 {
+    h2 {
       margin-top: 0;
+      color: #111827;
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 8px;
     }
 
-    a {
-      color: #0066cc;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 18px;
+      background: #f9fafb;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #1e3a8a;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      background: #e0ecff;
+      color: #1e3a8a;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .contact a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      color: #555;
+      padding: 24px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
     }
   </style>
 </head>
-
 <body>
-
   <header>
-    <h1>Your Full Name</h1>
-    <p>Student | Freelancer | Professional | Business Owner</p>
+    <h1>Shivamani Boddupally</h1>
+    <p>M.Tech Student in Artificial Intelligence and Data Science | Cyber Security Specialization | Digital Forensics Enthusiast</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      My name is <strong>Your Full Name</strong>. I am from <strong>Your City</strong>.
-      I am interested in <strong>Your Field</strong>. This is my official personal website.
-    </p>
-  </section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Skill 1</li>
-      <li>Skill 2</li>
-      <li>Skill 3</li>
-      <li>Skill 4</li>
-    </ul>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am <strong>Shivamani Boddupally</strong>, an M.Tech student in Artificial Intelligence and Data Science with a specialization in Cyber Security at National Forensic Sciences University, Goa. I have practical exposure to Linux, Python, mobile application analysis, network security, digital forensics basics, and security-focused projects.
+      </p>
+      <p>
+        I am interested in applying AI, cybersecurity, and digital forensics skills to real-world investigation, analysis, and security challenges.
+      </p>
+    </section>
 
-  <section>
-    <h2>Projects / Work</h2>
-    <p><strong>Project 1:</strong> Write about your work here.</p>
-    <p><strong>Project 2:</strong> Write about another project here.</p>
-  </section>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <ul class="tag-list">
+        <li>Linux</li>
+        <li>Python</li>
+        <li>SQL / MySQL</li>
+        <li>Network Security</li>
+        <li>Log Analysis</li>
+        <li>Mobile App Analysis</li>
+        <li>Digital Forensics</li>
+        <li>RAG Systems</li>
+        <li>Cybersecurity</li>
+      </ul>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: your-email@example.com</p>
-    <p>LinkedIn: <a href="#">Your LinkedIn Link</a></p>
-    <p>Instagram: <a href="#">Your Instagram Link</a></p>
-  </section>
+      <h2 style="margin-top: 28px;">Tools</h2>
+      <ul class="tag-list">
+        <li>Wireshark</li>
+        <li>Nmap</li>
+        <li>Burp Suite</li>
+        <li>ADB</li>
+        <li>MobSF</li>
+        <li>APKTool</li>
+        <li>JADX</li>
+        <li>Frida</li>
+        <li>YOLOv8</li>
+        <li>OpenCV</li>
+        <li>Streamlit</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects & Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>CCTV Analysis Tool for Forensic Labs</h3>
+          <p><strong>Aug 2025 - Dec 2025</strong></p>
+          <p>Built a CCTV analysis tool using Python, YOLOv8, OpenCV, and Streamlit for forensic use cases.</p>
+          <ul>
+            <li>Implemented person detection and tracking.</li>
+            <li>Worked on single-video person re-identification.</li>
+            <li>Generated annotated videos, snapshots, and CSV/JSON logs for investigation workflows.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Mobile Security and Forensic Analysis Lab Work</h3>
+          <p><strong>Jan 2026 - Apr 2026</strong></p>
+          <p>Gained hands-on exposure to Android application analysis and mobile security testing in lab environments.</p>
+          <ul>
+            <li>Used ADB, MobSF, APKTool, JADX, QARK, Frida, and Objection.</li>
+            <li>Worked on static analysis, dynamic testing, APK inspection, and security assessment tasks.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Domain-Specific RAG Chatbot</h3>
+          <p><strong>Feb 2026 - Apr 2026</strong></p>
+          <p>Built a Retrieval-Augmented Generation system for cybersecurity and digital forensics question answering.</p>
+          <ul>
+            <li>Worked with document ingestion and chunking.</li>
+            <li>Designed retrieval pipelines using embeddings and local/open models.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>M.Tech in Artificial Intelligence and Data Science</h3>
+        <p><strong>Specialization:</strong> Cyber Security</p>
+        <p><strong>National Forensic Sciences University, Goa</strong> | 2025 - 2027</p>
+        <p><strong>SPI:</strong> 8.15</p>
+      </div>
+      <br />
+      <div class="card">
+        <h3>B.Tech in Computer Science and Engineering</h3>
+        <p><strong>Specialization:</strong> Cybersecurity</p>
+        <p><strong>Sri Indu College of Engineering and Technology</strong> | 2021 - 2025</p>
+        <p><strong>CGPA:</strong> 6.9</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Cybersecurity Professional Program - ICTRD</li>
+        <li>CEH from Scratch</li>
+        <li>Foundations of Cybersecurity</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:shivamani1789@gmail.com">shivamani1789@gmail.com</a></p>
+      <p><strong>Location:</strong> Telangana, India</p>
+      <p>Add your LinkedIn, GitHub, and portfolio links here after creating them.</p>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2026 Your Full Name. All rights reserved.</p>
+    <p>© 2026 Shivamani Boddupally. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
