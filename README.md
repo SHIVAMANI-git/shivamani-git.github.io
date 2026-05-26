@@ -34,10 +34,21 @@ The website presents my profile, technical skills, education, projects, security
 
 shivamani-git.github.io/
   index.html
-  style.css
-  main.js
-  resume.pdf
   README.md
+  resume.pdf
+  css/
+    style.css
+  js/
+    theme.js
+    terminal.js
+    filters.js
+    modal.js
+    contact.js
+    main.js
+  assets/
+    images/
+    docs/
+
 
 ## Local Setup
 
