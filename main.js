@@ -417,3 +417,10 @@ window.addEventListener('keydown', (e) => {
     closeWriteup();
   }
 });
+
+// Explicitly bind helper functions to window object for inline HTML event handling
+window.filterSkills = filterSkills;
+window.filterProjects = filterProjects;
+window.runCommand = runCommand;
+window.openWriteup = openWriteup;
+window.closeWriteup = closeWriteup;

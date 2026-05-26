@@ -601,7 +601,7 @@ section {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 24px;
 }
 
@@ -835,7 +835,7 @@ section {
 /* Certifications Layout */
 .certifications-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 16px;
 }
 
@@ -1255,7 +1255,7 @@ body.light-theme .theme-toggle-btn .moon-icon {
 /* Write-up Section & Card Styles */
 .writeup-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 24px;
 }
 
@@ -1566,17 +1566,52 @@ body.light-theme .modal-content code {
   }
 }
 
-/* Accessibility & Visual Contrast Overrides */
-body.light-theme {
-  --text-muted: #4b5563;
+/* Accessibility Focus Indicators */
+:focus-visible {
+  outline: 2px solid var(--accent-primary) !important;
+  outline-offset: 4px !important;
 }
 
-body.light-theme .section-title::after {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+.theme-toggle-btn:focus-visible,
+.modal-close-btn:focus-visible {
+  outline-offset: 2px !important;
+  border-radius: 50% !important;
 }
 
-/* Mobile Nav Pill Wrap Protection */
+.nav-dock a:focus-visible {
+  outline-offset: 2px !important;
+  border-radius: 999px !important;
+}
+
+.social-btn:focus-visible {
+  outline-offset: 2px !important;
+  border-radius: 8px !important;
+}
+
+.terminal-shortcut-btn:focus-visible {
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+.btn:focus-visible {
+  outline-offset: 2px !important;
+  border-radius: 8px !important;
+}
+
+.form-control:focus-visible {
+  outline: none !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
+}
+
+.terminal-input-field:focus-visible {
+  outline: none !important;
+  border-bottom: 1px dashed var(--accent-primary) !important;
+}
+
+/* Mobile Responsive Optimizations & Overrides */
 @media (max-width: 600px) {
+  /* Mobile Nav Pill Wrap Protection */
   .nav-dock-container {
     width: 96%;
   }
@@ -1590,5 +1625,38 @@ body.light-theme .section-title::after {
     width: 32px !important;
     height: 32px !important;
     margin-left: 4px !important;
+  }
+
+  /* Terminal Mobile Adjustments */
+  .terminal-body {
+    padding: 12px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .terminal-shortcuts {
+    padding: 8px 12px !important;
+  }
+  
+  .terminal-shortcut-btn {
+    padding: 3px 8px !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Scale down hCaptcha on small viewports to prevent form overflow */
+  .h-captcha {
+    transform: scale(0.82);
+    transform-origin: center top;
+    margin-bottom: -10px;
+  }
+}
+
+@media (max-width: 340px) {
+  /* Scale down hCaptcha even further on extremely narrow viewports */
+  .h-captcha {
+    transform: scale(0.72);
+    transform-origin: center top;
+    margin-bottom: -15px;
   }
 }
