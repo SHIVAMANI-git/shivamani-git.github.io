@@ -8,14 +8,16 @@ if (savedTheme === 'light') {
   document.body.classList.add('light-theme');
 }
 
-themeToggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light-theme');
-  if (document.body.classList.contains('light-theme')) {
-    localStorage.setItem('theme', 'light');
-  } else {
-    localStorage.setItem('theme', 'dark');
-  }
-});
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    if (document.body.classList.contains('light-theme')) {
+      localStorage.setItem('theme', 'light');
+    } else {
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+}
 
 // ----------------------------------------------------
 // Terminal Command Line Widget Simulation
@@ -23,51 +25,54 @@ themeToggleBtn.addEventListener('click', () => {
 const terminalInput = document.getElementById('terminalInput');
 const terminalBody = document.getElementById('terminalBody');
 const terminalInputRow = document.getElementById('terminalInputRow');
+const terminalWindow = document.querySelector('.terminal-window');
 
 // Command history
 const commandHistory = [];
 let historyIndex = -1;
 
-// Focus terminal input when clicking inside the body
-document.querySelector('.terminal-window').addEventListener('click', () => {
-  terminalInput.focus();
-});
+if (terminalWindow && terminalInput) {
+  terminalWindow.addEventListener('click', () => {
+    terminalInput.focus();
+  });
+}
 
-terminalInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    const cmd = terminalInput.value.trim();
-    terminalInput.value = '';
-    if (cmd) {
-      commandHistory.push(cmd);
-      historyIndex = commandHistory.length;
-      executeCommand(cmd);
-    }
-  } else if (e.key === 'ArrowUp') {
-    e.preventDefault();
-    if (historyIndex > 0) {
-      historyIndex--;
-      terminalInput.value = commandHistory[historyIndex];
-    }
-  } else if (e.key === 'ArrowDown') {
-    e.preventDefault();
-    if (historyIndex < commandHistory.length - 1) {
-      historyIndex++;
-      terminalInput.value = commandHistory[historyIndex];
-    } else {
-      historyIndex = commandHistory.length;
+if (terminalInput) {
+  terminalInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const cmd = terminalInput.value.trim();
       terminalInput.value = '';
+      executeCommand(cmd);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (historyIndex > 0) {
+        historyIndex--;
+        terminalInput.value = commandHistory[historyIndex];
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex < commandHistory.length - 1) {
+        historyIndex++;
+        terminalInput.value = commandHistory[historyIndex];
+      } else {
+        historyIndex = commandHistory.length;
+        terminalInput.value = '';
+      }
     }
-  }
-});
+  });
+}
 
 // Run custom button command
 function runCommand(commandText) {
-  terminalInput.value = '';
-  executeCommand(commandText);
-  terminalInput.focus();
+  if (terminalInput) {
+    terminalInput.value = '';
+    executeCommand(commandText);
+    terminalInput.focus();
+  }
 }
 
 function appendLine(content, isCommand = false, isOutputHighlight = false) {
+  if (!terminalBody || !terminalInputRow) return;
   const line = document.createElement('div');
   line.className = 'terminal-line';
   
@@ -76,11 +81,10 @@ function appendLine(content, isCommand = false, isOutputHighlight = false) {
   } else {
     const outputSpan = document.createElement('span');
     outputSpan.className = 'terminal-output' + (isOutputHighlight ? ' highlight' : '');
-    outputSpan.innerHTML = content; // Allows formatted innerHTML like tables
+    outputSpan.innerHTML = content;
     line.appendChild(outputSpan);
   }
   
-  // Insert before input row
   terminalBody.insertBefore(line, terminalInputRow);
   terminalBody.scrollTop = terminalBody.scrollHeight;
 }
@@ -94,16 +98,21 @@ function escapeHtml(text) {
 function executeCommand(rawCmd) {
   const fullCmd = rawCmd.trim();
   appendLine(fullCmd, true);
+  
+  if (!fullCmd) return; // Exit early for empty inputs (standard shell behavior)
+  
+  commandHistory.push(fullCmd);
+  historyIndex = commandHistory.length;
 
-  // Parse commands
   const parts = fullCmd.toLowerCase().split(' ');
   const mainCmd = parts[0];
 
   setTimeout(() => {
     if (mainCmd === 'clear') {
-      // Keep welcome and input row, remove others
-      const lines = terminalBody.querySelectorAll('.terminal-line');
-      lines.forEach(line => line.remove());
+      if (terminalBody) {
+        const lines = terminalBody.querySelectorAll('.terminal-line');
+        lines.forEach(line => line.remove());
+      }
     } 
     else if (mainCmd === 'help') {
       appendLine(`Available Commands:
@@ -154,7 +163,9 @@ Nmap done: 1 IP address (1 host up) scanned in 1.45 seconds`);
     else {
       appendLine(`sh: command not found: '${escapeHtml(fullCmd)}'. Type <b>help</b> for command details.`, false, false);
     }
-    terminalBody.scrollTop = terminalBody.scrollHeight;
+    if (terminalBody) {
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
   }, 100);
 }
 
@@ -162,7 +173,6 @@ Nmap done: 1 IP address (1 host up) scanned in 1.45 seconds`);
 // Skills Filter Logic
 // ----------------------------------------------------
 function filterSkills(type) {
-  // Toggle button active states
   const buttons = document.querySelectorAll('.skills-tab-btn');
   buttons.forEach(btn => {
     if (btn.getAttribute('onclick').includes(type)) {
@@ -172,7 +182,6 @@ function filterSkills(type) {
     }
   });
 
-  // Filter grid tags
   const tags = document.querySelectorAll('.skill-tag');
   tags.forEach(tag => {
     if (type === 'all' || tag.getAttribute('data-type') === type) {
@@ -188,7 +197,6 @@ function filterSkills(type) {
 // Projects Filter Logic
 // ----------------------------------------------------
 function filterProjects(category) {
-  // Toggle button active states
   const buttons = document.querySelectorAll('.filter-btn');
   buttons.forEach(btn => {
     if (btn.getAttribute('onclick').includes(category)) {
@@ -198,7 +206,6 @@ function filterProjects(category) {
     }
   });
 
-  // Filter grid cards
   const cards = document.querySelectorAll('.project-card');
   cards.forEach(card => {
     const cardCats = card.getAttribute('data-category');
@@ -218,17 +225,18 @@ const navLinks = document.querySelectorAll('.nav-dock a');
 const sections = document.querySelectorAll('section');
 
 window.addEventListener('scroll', () => {
-  let current = '';
+  let current = 'about'; // Default active anchor when scrolled to top
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (pageYOffset >= (sectionTop - 150)) {
-      current = section.getAttribute('id');
+    if (window.scrollY >= (sectionTop - 150)) {
+      const id = section.getAttribute('id');
+      if (id && id !== 'hero') { // Skip hero to keep 'about' highlighted at top
+        current = id;
+      }
     }
   });
 
-  // Fallback for bottom of page to select contact
-  if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
     current = 'contact';
   }
 
@@ -244,52 +252,56 @@ window.addEventListener('scroll', () => {
 // Web3Forms Form Submission Handling
 // ----------------------------------------------------
 const contactForm = document.querySelector('.contact-form-panel form');
-contactForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const submitBtn = contactForm.querySelector('button[type="submit"]');
-  const originalBtnText = submitBtn.textContent;
-  submitBtn.textContent = 'Sending Message...';
-  submitBtn.disabled = true;
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    if (!submitBtn) return;
+    
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending Message...';
+    submitBtn.disabled = true;
 
-  const name = document.getElementById('contactName').value;
-  const email = document.getElementById('contactEmail').value;
-  const message = document.getElementById('contactMessage').value;
+    const name = document.getElementById('contactName').value;
+    const email = document.getElementById('contactEmail').value;
+    const message = document.getElementById('contactMessage').value;
 
-  // Web3Forms access key
-  const accessKey = 'c844132e-cd0b-4bc0-87b9-6e009b54f720';
+    // Public client-side Web3Forms key. Protect it using Web3Forms domain restriction.
+    const accessKey = 'c844132e-cd0b-4bc0-87b9-6e009b54f720';
 
-  try {
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        access_key: accessKey,
-        name: name,
-        email: email,
-        message: message,
-        subject: 'New Portfolio Contact Message from ' + name
-      })
-    });
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: name,
+          email: email,
+          message: message,
+          subject: 'New Portfolio Contact Message from ' + name
+        })
+      });
 
-    const result = await response.json();
-    if (result.success) {
-      alert('Thank you! Your message has been sent successfully.');
-      contactForm.reset();
-    } else {
-      alert('Something went wrong. Error: ' + result.message);
+      const result = await response.json();
+      if (result.success) {
+        alert('Thank you! Your message has been sent successfully.');
+        contactForm.reset();
+      } else {
+        alert('Something went wrong. Error: ' + result.message);
+      }
+    } catch (err) {
+      alert('Network error. Failed to send message.');
+      console.error(err);
+    } finally {
+      submitBtn.textContent = originalBtnText;
+      submitBtn.disabled = false;
     }
-  } catch (err) {
-    alert('Network error. Failed to send message.');
-    console.error(err);
-  } finally {
-    submitBtn.textContent = originalBtnText;
-    submitBtn.disabled = false;
-  }
-});
+  });
+}
 
 // ----------------------------------------------------
 // Write-up Modal Reader Logic & Data
@@ -360,25 +372,31 @@ const writeupsData = {
 };
 
 function openWriteup(id) {
-  const data = writeupsData[id];
-  if (data) {
-    modalTitle.textContent = data.title;
-    modalContent.innerHTML = data.content;
-    writeupModalOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+  if (writeupModalOverlay && modalTitle && modalContent) {
+    const data = writeupsData[id];
+    if (data) {
+      modalTitle.textContent = data.title;
+      modalContent.innerHTML = data.content;
+      writeupModalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   }
 }
 
 function closeWriteup() {
-  writeupModalOverlay.classList.remove('active');
-  document.body.style.overflow = '';
+  if (writeupModalOverlay && writeupModalOverlay.classList.contains('active')) {
+    writeupModalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 }
 
-writeupModalOverlay.addEventListener('click', (e) => {
-  if (e.target === writeupModalOverlay) {
-    closeWriteup();
-  }
-});
+if (writeupModalOverlay) {
+  writeupModalOverlay.addEventListener('click', (e) => {
+    if (e.target === writeupModalOverlay) {
+      closeWriteup();
+    }
+  });
+}
 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {

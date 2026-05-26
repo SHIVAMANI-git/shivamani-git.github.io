@@ -1565,3 +1565,30 @@ body.light-theme .modal-content code {
     border-color: black !important;
   }
 }
+
+/* Accessibility & Visual Contrast Overrides */
+body.light-theme {
+  --text-muted: #4b5563;
+}
+
+body.light-theme .section-title::after {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+}
+
+/* Mobile Nav Pill Wrap Protection */
+@media (max-width: 600px) {
+  .nav-dock-container {
+    width: 96%;
+  }
+
+  .nav-dock a {
+    padding: 6px 10px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .theme-toggle-btn {
+    width: 32px !important;
+    height: 32px !important;
+    margin-left: 4px !important;
+  }
+}
