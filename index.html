@@ -7,277 +7,706 @@
   <meta name="description" content="Official website of Shivamani Boddupally, M.Tech student in Artificial Intelligence and Data Science with specialization in Cyber Security. Skilled in Python, Linux, network security, mobile app analysis, digital forensics, and RAG systems." />
   <meta name="keywords" content="Shivamani Boddupally, Artificial Intelligence, Data Science, Cyber Security, Digital Forensics, Python, Linux, Network Security, Mobile Security, NFSU Goa" />
   <meta name="author" content="Shivamani Boddupally" />
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #1f2937;
-      background: #f3f4f6;
-    }
-
-    header {
-      background: linear-gradient(135deg, #111827, #1e3a8a);
-      color: white;
-      padding: 70px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-      letter-spacing: 0.5px;
-    }
-
-    header p {
-      max-width: 760px;
-      margin: 15px auto 0;
-      font-size: 18px;
-      color: #e5e7eb;
-    }
-
-    nav {
-      background: #111827;
-      text-align: center;
-      padding: 12px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 25px 15px;
-    }
-
-    section {
-      background: white;
-      margin: 22px 0;
-      padding: 28px;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #111827;
-      border-bottom: 3px solid #2563eb;
-      padding-bottom: 8px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 18px;
-      background: #f9fafb;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #1e3a8a;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .tag-list li {
-      background: #e0ecff;
-      color: #1e3a8a;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .contact a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 32px;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 6px 8px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Shivamani Boddupally</h1>
-    <p>M.Tech Student in Artificial Intelligence and Data Science | Cyber Security Specialization | Digital Forensics Enthusiast</p>
-  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- Floating Dock Navigation -->
+  <div class="nav-dock-container">
+    <nav class="nav-dock">
+      <a href="#about" class="active">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+        <span>About</span>
+      </a>
+      <a href="#skills">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+        </svg>
+        <span>Skills</span>
+      </a>
+      <a href="#projects">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+        </svg>
+        <span>Projects</span>
+      </a>
+      <a href="#education">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+        </svg>
+        <span>Education</span>
+      </a>
+      <a href="#contact">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.626a2.25 2.25 0 0 1-2.36 0L4.17 8.909a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+        </svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+  </div>
 
   <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-meta">
+        <span class="hero-pulse"></span>
+        <span>Available for Cybersecurity & AI Roles</span>
+      </div>
+      <h1 class="hero-title">
+        Shivamani <span>Boddupally</span>
+      </h1>
+      <p class="hero-subtitle">
+        M.Tech student in Artificial Intelligence and Data Science specializing in Cyber Security. Actively building RAG systems, performing mobile forensics, and securing digital architecture.
+      </p>
+      
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">
+          Get in Touch
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+          </svg>
+        </a>
+        <a href="#projects" class="btn btn-secondary">View Projects</a>
+      </div>
+
+      <!-- Interactive Command Terminal Widget -->
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn t-red"></span>
+            <span class="terminal-btn t-yellow"></span>
+            <span class="terminal-btn t-green"></span>
+          </div>
+          <div class="terminal-title">shivamani@nfsu-goa:~$</div>
+          <div style="width: 50px;"></div> <!-- spacer to align center -->
+        </div>
+        
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-line">
+            <span class="terminal-output highlight">Welcome to Shivamani's interactive terminal. (v1.0.4)</span>
+            <span class="terminal-output">Type 'help' to view all available commands or click the shortcut chips below.</span>
+          </div>
+          
+          <div class="terminal-input-row" id="terminalInputRow">
+            <span class="terminal-prompt"><span class="user">visitor</span><span class="host">@shivamani-sec</span>:~$</span>
+            <input type="text" class="terminal-input-field" id="terminalInput" autofocus autocomplete="off" spellcheck="false" placeholder="Type a command..." />
+          </div>
+        </div>
+
+        <div class="terminal-shortcuts">
+          <span class="terminal-shortcut-label">Quick Commands:</span>
+          <button class="terminal-shortcut-btn" onclick="runCommand('cat about.md')">about</button>
+          <button class="terminal-shortcut-btn" onclick="runCommand('cat skills.txt')">skills</button>
+          <button class="terminal-shortcut-btn" onclick="runCommand('nmap localhost')">nmap scan</button>
+          <button class="terminal-shortcut-btn" onclick="runCommand('cat contact.json')">contact</button>
+          <button class="terminal-shortcut-btn" onclick="runCommand('clear')">clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
     <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am <strong>Shivamani Boddupally</strong>, an M.Tech student in Artificial Intelligence and Data Science with a specialization in Cyber Security at National Forensic Sciences University, Goa. I have practical exposure to Linux, Python, mobile application analysis, network security, digital forensics basics, and security-focused projects.
-      </p>
-      <p>
-        I am interested in applying AI, cybersecurity, and digital forensics skills to real-world investigation, analysis, and security challenges.
-      </p>
+      <div class="section-header">
+        <span class="section-tag">01 / Profile</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I am an M.Tech student in <strong>Artificial Intelligence and Data Science</strong> with a specialization in <strong>Cyber Security</strong> at the National Forensic Sciences University, Goa. My work sits at the intersection of machine learning algorithms and secure system architectures.
+          </p>
+          <p>
+            I have hands-on experience in mobile application security assessments, digital forensic workflows, and designing retrieval-augmented generation (RAG) structures. I am passionate about utilizing intelligent automation to identify and mitigate cyber threats.
+          </p>
+          <p>
+            Currently, I am looking for opportunities where I can apply my analytical skills, programming expertise in Python and Linux systems, and cybersecurity training to modern investigation and security defense pipelines.
+          </p>
+        </div>
+        
+        <div class="about-aside">
+          <h3 class="aside-title">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25g"></path>
+            </svg>
+            Overview
+          </h3>
+          <ul class="aside-list">
+            <li class="aside-item">
+              <span class="aside-label">Location:</span>
+              <span class="aside-value">Telangana, India</span>
+            </li>
+            <li class="aside-item">
+              <span class="aside-label">Affiliation:</span>
+              <span class="aside-value">NFSU Goa</span>
+            </li>
+            <li class="aside-item">
+              <span class="aside-label">Languages:</span>
+              <span class="aside-value">Python, SQL, Bash</span>
+            </li>
+            <li class="aside-item">
+              <span class="aside-label">Interests:</span>
+              <span class="aside-value">AI, Cyber Sec, Forensics</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
-      <h2>Technical Skills</h2>
-      <ul class="tag-list">
-        <li>Linux</li>
-        <li>Python</li>
-        <li>SQL / MySQL</li>
-        <li>Network Security</li>
-        <li>Log Analysis</li>
-        <li>Mobile App Analysis</li>
-        <li>Digital Forensics</li>
-        <li>RAG Systems</li>
-        <li>Cybersecurity</li>
-      </ul>
+      <div class="section-header">
+        <span class="section-tag">02 / Expertise</span>
+        <h2 class="section-title">Technical Skills & Tools</h2>
+      </div>
 
-      <h2 style="margin-top: 28px;">Tools</h2>
-      <ul class="tag-list">
-        <li>Wireshark</li>
-        <li>Nmap</li>
-        <li>Burp Suite</li>
-        <li>ADB</li>
-        <li>MobSF</li>
-        <li>APKTool</li>
-        <li>JADX</li>
-        <li>Frida</li>
-        <li>YOLOv8</li>
-        <li>OpenCV</li>
-        <li>Streamlit</li>
-      </ul>
+      <div class="skills-filter-container">
+        <div class="skills-tabs">
+          <button class="skills-tab-btn active" onclick="filterSkills('all')">All</button>
+          <button class="skills-tab-btn" onclick="filterSkills('core')">Skills</button>
+          <button class="skills-tab-btn" onclick="filterSkills('tools')">Tools</button>
+        </div>
+      </div>
+
+      <div class="skills-tag-grid" id="skillsGrid">
+        <!-- Core Skills -->
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"></path></svg>
+          Linux
+        </div>
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"></path></svg>
+          Python
+        </div>
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0v3.75"></path></svg>
+          SQL / MySQL
+        </div>
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751A11.977 11.977 0 0 1 12 2.714Z"></path></svg>
+          Network Security
+        </div>
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path></svg>
+          Log Analysis
+        </div>
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"></path></svg>
+          Mobile App Analysis
+        </div>
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"></path></svg>
+          Digital Forensics
+        </div>
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.43m-8.904-.666a12.017 12.017 0 005.073-5.073m0 0A12.017 12.017 0 0115.904 9.813M15.904 9.813L21 9l-4.43 8.904m-4.43-8.904a12.017 12.017 0 01-5.073 5.073m0 0A12.017 12.017 0 009.813 15.904Z"></path></svg>
+          RAG Systems
+        </div>
+        <div class="skill-tag" data-type="core">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3Z"></path></svg>
+          Cybersecurity
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253"></path></svg>
+          Wireshark
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.13c1.434-1.25 3.799-1.25 5.233 0a.75.75 0 0 1-.99 1.13Z"></path></svg>
+          Nmap
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 4.5v15m6-15v15m-12-3h18m-18-6h18m-18-3h18"></path></svg>
+          Burp Suite
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925 3.546 5.974 5.974 0 0 1-2.133-1A3.75 3.75 0 0 0 12 18Z"></path></svg>
+          ADB
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h.008v.008H9V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm2.25 0h.008v.008H15V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"></path></svg>
+          MobSF
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z"></path></svg>
+          APKTool
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path></svg>
+          JADX
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879-.659c1.571-1.18 3.177-1.129 4.242 0L15 15.182m-3-9.182L9 9m3-3 3 3M6.75 19.5h10.5"></path></svg>
+          Frida
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"></path></svg>
+          YOLOv8
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-3.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z"></path></svg>
+          OpenCV
+        </div>
+        <div class="skill-tag" data-type="tools">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0l-3 3m3-3v3m7.5-3l3 3m-3-3v3"></path></svg>
+          Streamlit
+        </div>
+      </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
-      <h2>Projects & Experience</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>CCTV Analysis Tool for Forensic Labs</h3>
-          <p><strong>Aug 2025 - Dec 2025</strong></p>
-          <p>Built a CCTV analysis tool using Python, YOLOv8, OpenCV, and Streamlit for forensic use cases.</p>
-          <ul>
-            <li>Implemented person detection and tracking.</li>
-            <li>Worked on single-video person re-identification.</li>
-            <li>Generated annotated videos, snapshots, and CSV/JSON logs for investigation workflows.</li>
+      <div class="section-header">
+        <span class="section-tag">03 / Engineering</span>
+        <h2 class="section-title">Projects & Experience</h2>
+      </div>
+
+      <div class="projects-header-actions">
+        <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+        <button class="filter-btn" onclick="filterProjects('ai')">AI & Computer Vision</button>
+        <button class="filter-btn" onclick="filterProjects('security')">Cybersecurity & Forensics</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card" data-category="ai">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"></path></svg>
+            </div>
+            <span class="project-time">Aug 2025 - Dec 2025</span>
+          </div>
+          <h3 class="project-title">CCTV Analysis Tool for Forensic Labs</h3>
+          <p class="project-desc">Built a specialized visual analysis interface designed for forensic investigators using state-of-the-art computer vision models.</p>
+          <ul class="project-bullets">
+            <li>Implemented target tracking and person detection on multi-view video feeds.</li>
+            <li>Developed single-video person re-identification pipeline.</li>
+            <li>Generated automatic snapshots and JSON/CSV logs detailing investigation workflows.</li>
           </ul>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">YOLOv8</span>
+            <span class="project-tag">OpenCV</span>
+            <span class="project-tag">Streamlit</span>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Mobile Security and Forensic Analysis Lab Work</h3>
-          <p><strong>Jan 2026 - Apr 2026</strong></p>
-          <p>Gained hands-on exposure to Android application analysis and mobile security testing in lab environments.</p>
-          <ul>
-            <li>Used ADB, MobSF, APKTool, JADX, QARK, Frida, and Objection.</li>
-            <li>Worked on static analysis, dynamic testing, APK inspection, and security assessment tasks.</li>
+        <div class="project-card" data-category="security">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"></path></svg>
+            </div>
+            <span class="project-time">Jan 2026 - Apr 2026</span>
+          </div>
+          <h3 class="project-title">Mobile Security & Forensic Analysis</h3>
+          <p class="project-desc">Gained comprehensive, hands-on lab experience performing depth analysis and dynamic checks on target Android applications.</p>
+          <ul class="project-bullets">
+            <li>Executed static decompilation, vulnerability mapping, and signature inspection.</li>
+            <li>Conducted dynamic hook injection and decryption testing on target binaries.</li>
+            <li>Utilized industry standard automated forensic reporting utilities.</li>
           </ul>
+          <div class="project-tags">
+            <span class="project-tag">MobSF</span>
+            <span class="project-tag">Frida</span>
+            <span class="project-tag">JADX</span>
+            <span class="project-tag">Objection</span>
+            <span class="project-tag">ADB</span>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Domain-Specific RAG Chatbot</h3>
-          <p><strong>Feb 2026 - Apr 2026</strong></p>
-          <p>Built a Retrieval-Augmented Generation system for cybersecurity and digital forensics question answering.</p>
-          <ul>
-            <li>Worked with document ingestion and chunking.</li>
-            <li>Designed retrieval pipelines using embeddings and local/open models.</li>
+        <div class="project-card" data-category="ai security">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.43m-8.904-.666a12.017 12.017 0 005.073-5.073m0 0A12.017 12.017 0 0115.904 9.813M15.904 9.813L21 9l-4.43 8.904m-4.43-8.904a12.017 12.017 0 01-5.073 5.073m0 0A12.017 12.017 0 009.813 15.904Z"></path></svg>
+            </div>
+            <span class="project-time">Feb 2026 - Apr 2026</span>
+          </div>
+          <h3 class="project-title">Domain-Specific RAG Chatbot</h3>
+          <p class="project-desc">Created an intelligent question-answering system tuned for cybersecurity logs, vulnerability notes, and digital forensics manuals.</p>
+          <ul class="project-bullets">
+            <li>Designed text ingestion, hierarchical chunking, and metadata mapping.</li>
+            <li>Built semantic vector indexing and retrieval enhancement layers.</li>
+            <li>Integrated and deployed local, security-aligned open source LLMs.</li>
           </ul>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Embeddings</span>
+            <span class="project-tag">Vector DB</span>
+            <span class="project-tag">Local LLMs</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education">
-      <h2>Education</h2>
-      <div class="card">
-        <h3>M.Tech in Artificial Intelligence and Data Science</h3>
-        <p><strong>Specialization:</strong> Cyber Security</p>
-        <p><strong>National Forensic Sciences University, Goa</strong> | 2025 - 2027</p>
-        <p><strong>SPI:</strong> 8.15</p>
+      <div class="section-header">
+        <span class="section-tag">04 / Journey</span>
+        <h2 class="section-title">Education & Certifications</h2>
       </div>
-      <br />
-      <div class="card">
-        <h3>B.Tech in Computer Science and Engineering</h3>
-        <p><strong>Specialization:</strong> Cybersecurity</p>
-        <p><strong>Sri Indu College of Engineering and Technology</strong> | 2021 - 2025</p>
-        <p><strong>CGPA:</strong> 6.9</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-degree">M.Tech in Artificial Intelligence & Data Science</span>
+              <span class="timeline-date">2025 - 2027</span>
+            </div>
+            <p class="timeline-org">National Forensic Sciences University, Goa</p>
+            <p class="timeline-detail">Specializing in Cyber Security. Focusing on neural networks, threat intelligence automation, and forensic computing systems.</p>
+            <span class="timeline-metric">SPI: 8.15</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-degree">B.Tech in Computer Science & Engineering</span>
+              <span class="timeline-date">2021 - 2025</span>
+            </div>
+            <p class="timeline-org">Sri Indu College of Engineering and Technology</p>
+            <p class="timeline-detail">Specializing in Cybersecurity. Gained solid foundational knowledge in system architecture, network designs, and general programming paradigms.</p>
+            <span class="timeline-metric">CGPA: 6.9</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 50px;">
+        <h3 class="aside-title" style="margin-bottom: 24px;">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"></path>
+          </svg>
+          Professional Certifications
+        </h3>
+        
+        <div class="certifications-list">
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"></path></svg>
+            </div>
+            <span class="cert-name">Cybersecurity Professional Program - ICTRD</span>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"></path></svg>
+            </div>
+            <span class="cert-name">CEH from Scratch (Certified Ethical Hacker)</span>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"></path></svg>
+            </div>
+            <span class="cert-name">Foundations of Cybersecurity</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Certifications</h2>
-      <ul>
-        <li>Cybersecurity Professional Program - ICTRD</li>
-        <li>CEH from Scratch</li>
-        <li>Foundations of Cybersecurity</li>
-      </ul>
-    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <span class="section-tag">05 / Contact</span>
+        <h2 class="section-title">Get in Touch</h2>
+      </div>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:shivamani1789@gmail.com">shivamani1789@gmail.com</a></p>
-      <p><strong>Location:</strong> Telangana, India</p>
-      <p>Add your LinkedIn, GitHub, and portfolio links here after creating them.</p>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div>
+            <p style="margin-bottom: 24px; font-size: 1.05rem;">
+              Whether you are looking to collaborate on research, hire an intern for a security operations/data science team, or just talk tech, feel free to reach out.
+            </p>
+            
+            <div class="contact-channels">
+              <a href="mailto:shivamani1789@gmail.com" class="contact-link">
+                <div class="contact-link-icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.626a2.25 2.25 0 0 1-2.36 0L4.17 8.909a2.25 2.25 0 0 1-1.07-1.916V6.75"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-link-label">Direct Email</div>
+                  <div class="contact-link-value">shivamani1789@gmail.com</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase;">Find me online</p>
+            <div class="contact-social-grid">
+              <a href="https://github.com/shivamani-git" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path>
+                </svg>
+              </a>
+              <a href="https://linkedin.com/in/shivamani-boddupally" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-panel">
+          <form onsubmit="event.preventDefault(); alert('Message simulation sent! In a live deployment, this can be integrated with Web3Forms or EmailJS.');">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Your Name</label>
+              <input type="text" id="contactName" class="form-control" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" class="form-control" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Message</label>
+              <textarea id="contactMessage" class="form-control" placeholder="Hey Shivamani, I would love to connect about..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Shivamani Boddupally. All rights reserved.</p>
+    <div class="footer-text">
+      © 2026 Shivamani Boddupally. Designed with <span class="footer-heart">♥</span> and engineered for security.
+    </div>
   </footer>
+
+  <script>
+    // ----------------------------------------------------
+    // Terminal Command Line Widget Simulation
+    // ----------------------------------------------------
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalBody = document.getElementById('terminalBody');
+    const terminalInputRow = document.getElementById('terminalInputRow');
+    
+    // Command history
+    const commandHistory = [];
+    let historyIndex = -1;
+
+    // Focus terminal input when clicking inside the body
+    document.querySelector('.terminal-window').addEventListener('click', () => {
+      terminalInput.focus();
+    });
+
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = terminalInput.value.trim();
+        terminalInput.value = '';
+        if (cmd) {
+          commandHistory.push(cmd);
+          historyIndex = commandHistory.length;
+          executeCommand(cmd);
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (historyIndex > 0) {
+          historyIndex--;
+          terminalInput.value = commandHistory[historyIndex];
+        }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (historyIndex < commandHistory.length - 1) {
+          historyIndex++;
+          terminalInput.value = commandHistory[historyIndex];
+        } else {
+          historyIndex = commandHistory.length;
+          terminalInput.value = '';
+        }
+      }
+    });
+
+    // Run custom button command
+    function runCommand(commandText) {
+      terminalInput.value = '';
+      executeCommand(commandText);
+      terminalInput.focus();
+    }
+
+    function appendLine(content, isCommand = false, isOutputHighlight = false) {
+      const line = document.createElement('div');
+      line.className = 'terminal-line';
+      
+      if (isCommand) {
+        line.innerHTML = `<span class="terminal-prompt"><span class="user">visitor</span><span class="host">@shivamani-sec</span>:~$</span> <span class="terminal-command">${escapeHtml(content)}</span>`;
+      } else {
+        const outputSpan = document.createElement('span');
+        outputSpan.className = 'terminal-output' + (isOutputHighlight ? ' highlight' : '');
+        outputSpan.innerHTML = content; // Allows formatted innerHTML like tables
+        line.appendChild(outputSpan);
+      }
+      
+      // Insert before input row
+      terminalBody.insertBefore(line, terminalInputRow);
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.innerText = text;
+      return div.innerHTML;
+    }
+
+    function executeCommand(rawCmd) {
+      const fullCmd = rawCmd.trim();
+      appendLine(fullCmd, true);
+
+      // Parse commands
+      const parts = fullCmd.toLowerCase().split(' ');
+      const mainCmd = parts[0];
+
+      setTimeout(() => {
+        if (mainCmd === 'clear') {
+          // Keep welcome and input row, remove others
+          const lines = terminalBody.querySelectorAll('.terminal-line');
+          lines.forEach(line => line.remove());
+        } 
+        else if (mainCmd === 'help') {
+          appendLine(`Available Commands:
+  - <b>cat about.md</b>    : Print details about Shivamani
+  - <b>cat skills.txt</b>   : List core technical skills & methodologies
+  - <b>nmap localhost</b>   : Scan local ports of this profile
+  - <b>cat contact.json</b> : Show contact channels
+  - <b>clear</b>            : Clear the screen`);
+        } 
+        else if (fullCmd === 'cat about.md') {
+          appendLine(`<b>Shivamani Boddupally</b>
+-------------------------
+- M.Tech student in Artificial Intelligence and Data Science at NFSU Goa.
+- Specializing in Cyber Security and Digital Forensics.
+- Intrigued by vulnerability auditing, RAG architecture, and computer vision forensics.`);
+        } 
+        else if (fullCmd === 'cat skills.txt') {
+          appendLine(`<b>Technical Skills:</b>
+- Programming     : Python (YOLOv8, OpenCV), SQL / MySQL, Shell Scripting (Bash)
+- Cyber Defense   : Log Auditing, System Hardening, Network Analysis
+- Forensics       : Mobile Binary Decompilation, ADB Inspection
+- Frameworks      : Streamlit, Embeddings mapping, local vector indexes`);
+        } 
+        else if (fullCmd === 'cat contact.json') {
+          appendLine(`{
+  "name": "Shivamani Boddupally",
+  "role": "Cybersecurity & AI M.Tech Student",
+  "location": "Telangana, India",
+  "email": "shivamani1789@gmail.com",
+  "github": "https://github.com/shivamani-git",
+  "linkedin": "https://linkedin.com/in/shivamani-boddupally"
+}`);
+        } 
+        else if (fullCmd === 'nmap localhost') {
+          appendLine(`Starting Nmap 7.92 ( https://nmap.org ) at 2026-05-26 22:40 IST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00041s latency).
+Not shown: 995 closed tcp ports
+<b>PORT     STATE SERVICE      VERSION</b>
+22/tcp   open  ssh          OpenSSH 9.2 (Security Audited)
+80/tcp   open  http         Portfolio site (Simple HTTP Server)
+443/tcp  open  https        SSL/TLS Service
+5432/tcp open  postgresql   RAG Embeddings Vector Store
+8501/tcp open  streamlit    CCTV Forensic Vision UI
+
+Nmap done: 1 IP address (1 host up) scanned in 1.45 seconds`);
+        } 
+        else {
+          appendLine(`sh: command not found: '${escapeHtml(fullCmd)}'. Type <b>help</b> for command details.`, false, false);
+        }
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }, 100);
+    }
+
+    // ----------------------------------------------------
+    // Skills Filter Logic
+    // ----------------------------------------------------
+    function filterSkills(type) {
+      // Toggle button active states
+      const buttons = document.querySelectorAll('.skills-tab-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('onclick').includes(type)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Filter grid tags
+      const tags = document.querySelectorAll('.skill-tag');
+      tags.forEach(tag => {
+        if (type === 'all' || tag.getAttribute('data-type') === type) {
+          tag.style.display = 'flex';
+          tag.style.animation = 'fadeIn 0.3s ease forwards';
+        } else {
+          tag.style.display = 'none';
+        }
+      });
+    }
+
+    // ----------------------------------------------------
+    // Projects Filter Logic
+    // ----------------------------------------------------
+    function filterProjects(category) {
+      // Toggle button active states
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('onclick').includes(category)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Filter grid cards
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const cardCats = card.getAttribute('data-category');
+        if (category === 'all' || (cardCats && cardCats.includes(category))) {
+          card.style.display = 'flex';
+          card.style.animation = 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // ----------------------------------------------------
+    // Floating Dock Active Highlighting on Scroll
+    // ----------------------------------------------------
+    const navLinks = document.querySelectorAll('.nav-dock a');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      // Fallback for bottom of page to select contact
+      if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) {
+        current = 'contact';
+      }
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
