@@ -260,6 +260,15 @@ if (contactForm) {
     if (!submitBtn) return;
     
     const originalBtnText = submitBtn.textContent;
+    
+    // Validate hCaptcha response token
+    const hCaptchaWidget = contactForm.querySelector('[name="h-captcha-response"]');
+    const hCaptchaResponse = hCaptchaWidget ? hCaptchaWidget.value : '';
+    if (!hCaptchaResponse) {
+      alert('Please complete the hCaptcha verification.');
+      return;
+    }
+    
     submitBtn.textContent = 'Sending Message...';
     submitBtn.disabled = true;
 
@@ -282,6 +291,7 @@ if (contactForm) {
           name: name,
           email: email,
           message: message,
+          "h-captcha-response": hCaptchaResponse,
           subject: 'New Portfolio Contact Message from ' + name
         })
       });
@@ -290,6 +300,10 @@ if (contactForm) {
       if (result.success) {
         alert('Thank you! Your message has been sent successfully.');
         contactForm.reset();
+        // Reset hCaptcha widget after successful send
+        if (typeof hcaptcha !== 'undefined') {
+          hcaptcha.reset();
+        }
       } else {
         alert('Something went wrong. Error: ' + result.message);
       }

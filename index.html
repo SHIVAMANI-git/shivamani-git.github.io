@@ -23,6 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css" />
+  <!-- hCaptcha for Form Security -->
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -549,7 +551,7 @@
         </div>
 
         <div class="contact-form-panel">
-          <form onsubmit="event.preventDefault(); alert('Message simulation sent! In a live deployment, this can be integrated with Web3Forms or EmailJS.');">
+          <form>
             <div class="form-group">
               <label class="form-label" for="contactName">Your Name</label>
               <input type="text" id="contactName" class="form-control" placeholder="John Doe" required />
@@ -561,6 +563,9 @@
             <div class="form-group">
               <label class="form-label" for="contactMessage">Message</label>
               <textarea id="contactMessage" class="form-control" placeholder="Hey Shivamani, I would love to connect about..." required></textarea>
+            </div>
+            <div class="form-group" style="display: flex; justify-content: center; margin-bottom: 20px;">
+              <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" data-theme="dark"></div>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
               Send Message
