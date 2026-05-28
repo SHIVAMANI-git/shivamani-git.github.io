@@ -117,26 +117,33 @@ const projectsData = {
     `
   },
   'mobile_sec': {
-    title: "Mobile Security & Forensic Analysis",
+    title: "Mobile Security & Forensics Lab",
     content: `
-      <p>An Android application vulnerability auditing and reverse-engineering pipeline for dynamic API hook audits and crypto inspections.</p>
+      <p>Built a personal mobile security and digital forensics lab for Android application analysis, reverse engineering, runtime instrumentation, and forensic investigation workflows using real devices and industry-standard security tools.</p>
       
       <h3>Why I Built This</h3>
-      <p>Built to understand reverse engineering workflows and test mobile applications for common security vulnerabilities (OWASP Mobile Top 10) and cryptographic misconfigurations.</p>
+      <p>Designed for educational research, forensic experimentation, and cybersecurity learning using controlled testing environments and authorized devices only.</p>
       
-      <h3>Key Features</h3>
+      <h3>Lab Infrastructure</h3>
       <ul>
-        <li><b>Static Analysis:</b> Decompilation and signature analysis using JADX and APKTool to map code logic and hardcoded values.</li>
-        <li><b>Dynamic Instrumentation:</b> Bypassed runtime controls (root check, SSL pinning) using Frida hooks and Objection.</li>
-        <li><b>Automated Security Auditing:</b> Integrated MobSF and QARK to run compliance checks on target builds.</li>
-        <li><b>Crypto Audits:</b> Identified weak cryptographic implementations (e.g. hardcoded AES keys, weak hashes).</li>
+        <li><b>Forensic Workstation:</b> ASUS TUF F16 (Windows 11 analysis environment)</li>
+        <li><b>Physical Testing Devices:</b> OnePlus 9R and Samsung Galaxy S24 Ultra reference device</li>
+        <li><b>Forensic Interface:</b> Android SDK Platform Tools with ADB-enabled extraction workflows</li>
       </ul>
 
-      <h3>Outcomes & Metrics</h3>
+      <h3>Core Capabilities</h3>
       <ul>
-        <li>Successfully analyzed 5 target Android applications and documented vulnerabilities.</li>
-        <li>Implemented automated build script reporting system for fast security checks.</li>
-        <li>Presented findings to lab teams detailing runtime bypass techniques.</li>
+        <li><b>APK Reverse Engineering:</b> Static analysis, manifest audits, permission audits, and code decompilation using JADX and APKTool.</li>
+        <li><b>Runtime Instrumentation:</b> Custom API hooking and dynamic memory inspection using Frida and Objection.</li>
+        <li><b>Vulnerability Scans:</b> Running automated checks via MobSF and QARK to audit application security controls.</li>
+        <li><b>Network Interception:</b> Decrypting HTTPS packets and analyzing application communication using Wireshark.</li>
+      </ul>
+
+      <h3>Key Focus Areas & Outcomes</h3>
+      <ul>
+        <li>Testing Android applications for security vulnerabilities and malware behavior.</li>
+        <li>Reconstructing digital forensic investigation workflows with chain-of-custody.</li>
+        <li>Exploring AI-assisted security automation and forensic analysis.</li>
       </ul>
     `
   }
