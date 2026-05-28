@@ -109,11 +109,20 @@ function executeCommand(rawCmd) {
 - Focusing on digital forensics, CCTV vision pipelines, mobile vulnerability tests, and local RAG models.`);
     } 
     else if (fullCmd === 'cat skills.txt') {
-      appendLine(`<b>Technical Skills:</b>
-- Programming     : Python (YOLOv8, OpenCV), SQL / MySQL, Shell Scripting (Bash)
-- Cyber Defense   : Log Auditing, System Hardening, Network Analysis
-- Forensics       : Mobile Binary Decompilation, ADB Inspection
-- Frameworks      : Streamlit, Embeddings mapping, local vector indexes`);
+      appendLine(`<b>Technical Skills & Tools:</b>
+
+<b>Core Domains:</b>
+- Cybersecurity, Digital Forensics, Mobile Security, Network Security,
+  CCTV Analytics, AI Surveillance Analysis, RAG Systems, Incident Response
+
+<b>Programming & Development:</b>
+- Python, SQL / MySQL, Bash, Linux, Git
+
+<b>AI / Computer Vision:</b>
+- YOLOv8, OpenCV, PyTorch, Streamlit, NumPy, Pandas
+
+<b>Security & Forensics Tools:</b>
+- Wireshark, Nmap, Burp Suite, MobSF, Frida, Objection, ADB, JADX, APKTool, QARK`);
     } 
     else if (fullCmd === 'cat contact.json') {
       appendLine(`{
