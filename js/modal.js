@@ -171,9 +171,6 @@ const projectsData = {
         <img src="assets/images/project_mobile_sec.png" alt="Mobile Security & Forensics Lab Environment" class="modal-project-img" style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);" />
       </div>
 
-      <h3>GitHub Link</h3>
-      <p><a href="https://github.com/shivamani-git/mobile-security-lab" target="_blank" rel="noopener noreferrer" class="modal-link">github.com/shivamani-git/mobile-security-lab</a></p>
-
       <h3>Responsible Usage Note</h3>
       <p>All dynamic analyses, hooking, and packet audits are executed solely on owned laboratory hardware and authorized targets. Unauthorized reverse-engineering of third-party systems is strictly prohibited.</p>
     `
