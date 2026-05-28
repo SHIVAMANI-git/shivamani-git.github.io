@@ -130,7 +130,7 @@ function executeCommand(rawCmd) {
   "role": "Cybersecurity & AI M.Tech Student",
   "location": "Andhra Pradesh, India",
   "email": "shivamani1789@gmail.com",
-  "github": "https://github.com/shivamani-git",
+  "github": "https://github.com/SHIVAMANI-git",
   "linkedin": "https://www.linkedin.com/in/shivamani-boddupally-41a4aa29b/"
 }`);
     } 
