@@ -105,9 +105,8 @@ function executeCommand(rawCmd) {
     else if (fullCmd === 'cat about.md') {
       appendLine(`<b>Shivamani Boddupally</b>
 -------------------------
-- M.Tech student in Artificial Intelligence and Data Science at NFSU Goa.
-- Specializing in Cyber Security and Digital Forensics.
-- Intrigued by vulnerability auditing, RAG architecture, and computer vision forensics.`);
+- M.Tech student in Artificial Intelligence and Data Science at NFSU Goa (Specialization in Cyber Security).
+- Focusing on digital forensics, CCTV vision pipelines, mobile vulnerability tests, and local RAG models.`);
     } 
     else if (fullCmd === 'cat skills.txt') {
       appendLine(`<b>Technical Skills:</b>
@@ -120,7 +119,7 @@ function executeCommand(rawCmd) {
       appendLine(`{
   "name": "Shivamani Boddupally",
   "role": "Cybersecurity & AI M.Tech Student",
-  "location": "Telangana, India",
+  "location": "Andhra Pradesh, India",
   "email": "shivamani1789@gmail.com",
   "github": "https://github.com/shivamani-git",
   "linkedin": "https://www.linkedin.com/in/shivamani-boddupally-41a4aa29b/"
