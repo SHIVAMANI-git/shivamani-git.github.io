@@ -11,7 +11,48 @@ if (contactForm) {
     
     const originalBtnText = submitBtn.textContent;
     
-    // Validate hCaptcha response token
+    // Elements retrieval with safe null checks
+    const nameInput = document.getElementById('contactName');
+    const emailInput = document.getElementById('contactEmail');
+    const messageInput = document.getElementById('contactMessage');
+    
+    if (!nameInput || !emailInput || !messageInput) {
+      alert('Required form fields are missing in the document.');
+      return;
+    }
+    
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+    
+    // Basic frontend validation
+    if (name === '') {
+      alert('Please enter your name.');
+      nameInput.focus();
+      return;
+    }
+    
+    if (email === '') {
+      alert('Please enter your email address.');
+      emailInput.focus();
+      return;
+    }
+    
+    // Standard email address validation regex pattern
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      emailInput.focus();
+      return;
+    }
+    
+    if (message === '') {
+      alert('Please enter your message.');
+      messageInput.focus();
+      return;
+    }
+    
+    // Validate hCaptcha response token with safe null checks
     const hCaptchaWidget = contactForm.querySelector('[name="h-captcha-response"]');
     const hCaptchaResponse = hCaptchaWidget ? hCaptchaWidget.value : '';
     if (!hCaptchaResponse) {
@@ -21,14 +62,11 @@ if (contactForm) {
     
     submitBtn.textContent = 'Sending Message...';
     submitBtn.disabled = true;
-
-    const name = document.getElementById('contactName').value;
-    const email = document.getElementById('contactEmail').value;
-    const message = document.getElementById('contactMessage').value;
-
-    // Public client-side Web3Forms key. Protect it using Web3Forms domain restriction.
+    
+    // Public client-side Web3Forms key.
+    // NOTE: Domain restriction must be enabled in Web3Forms dashboard to protect this key from abuse.
     const accessKey = 'c844132e-cd0b-4bc0-87b9-6e009b54f720';
-
+    
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -45,7 +83,7 @@ if (contactForm) {
           subject: 'New Portfolio Contact Message from ' + name
         })
       });
-
+      
       const result = await response.json();
       if (result.success) {
         alert('Thank you! Your message has been sent successfully.');

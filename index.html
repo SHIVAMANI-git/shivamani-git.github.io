@@ -250,11 +250,11 @@
 
       <div class="skills-filter-container">
         <div class="skills-tabs">
-          <button class="skills-tab-btn active" onclick="filterSkills('all')">All</button>
-          <button class="skills-tab-btn" onclick="filterSkills('domains')">Domains</button>
-          <button class="skills-tab-btn" onclick="filterSkills('dev')">Programming & Dev</button>
-          <button class="skills-tab-btn" onclick="filterSkills('ai')">AI/CV Stack</button>
-          <button class="skills-tab-btn" onclick="filterSkills('tools')">Security Tools</button>
+          <button class="skills-tab-btn active" data-skill-filter="all">All</button>
+          <button class="skills-tab-btn" data-skill-filter="domains">Domains</button>
+          <button class="skills-tab-btn" data-skill-filter="dev">Programming & Dev</button>
+          <button class="skills-tab-btn" data-skill-filter="ai">AI/CV Stack</button>
+          <button class="skills-tab-btn" data-skill-filter="tools">Security Tools</button>
         </div>
       </div>
 
@@ -393,9 +393,9 @@
       </div>
 
       <div class="projects-header-actions">
-        <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
-        <button class="filter-btn" onclick="filterProjects('ai')">AI & Computer Vision</button>
-        <button class="filter-btn" onclick="filterProjects('security')">Cybersecurity & Forensics</button>
+        <button class="filter-btn active" data-project-filter="all">All Projects</button>
+        <button class="filter-btn" data-project-filter="ai">AI & Computer Vision</button>
+        <button class="filter-btn" data-project-filter="security">Cybersecurity & Forensics</button>
       </div>
 
       <div class="projects-grid">

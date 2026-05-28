@@ -60,6 +60,7 @@ function appendLine(content, isCommand = false, isOutputHighlight = false) {
   } else {
     const outputSpan = document.createElement('span');
     outputSpan.className = 'terminal-output' + (isOutputHighlight ? ' highlight' : '');
+    // WARNING: innerHTML is strictly used for pre-rendered, trusted static terminal outputs.
     outputSpan.innerHTML = content;
     line.appendChild(outputSpan);
   }
@@ -84,7 +85,9 @@ function executeCommand(rawCmd) {
   commandHistory.push(fullCmd);
   historyIndex = commandHistory.length;
 
-  const parts = fullCmd.toLowerCase().split(' ');
+  // Normalize command matching using lowercase to make matching case-insensitive
+  const normalizedCmd = fullCmd.toLowerCase().trim();
+  const parts = normalizedCmd.split(' ');
   const mainCmd = parts[0];
 
   setTimeout(() => {
@@ -102,13 +105,13 @@ function executeCommand(rawCmd) {
   - <b>cat contact.json</b> : Show contact channels
   - <b>clear</b>            : Clear the screen`);
     } 
-    else if (fullCmd === 'cat about.md') {
+    else if (normalizedCmd === 'cat about.md') {
       appendLine(`<b>Shivamani Boddupally</b>
 -------------------------
 - M.Tech student in Artificial Intelligence and Data Science at NFSU Goa (Specialization in Cyber Security).
 - Focusing on digital forensics, CCTV vision pipelines, mobile vulnerability tests, and local RAG models.`);
     } 
-    else if (fullCmd === 'cat skills.txt') {
+    else if (normalizedCmd === 'cat skills.txt') {
       appendLine(`<b>Technical Skills & Tools:</b>
 
 <b>Core Domains:</b>
@@ -124,7 +127,7 @@ function executeCommand(rawCmd) {
 <b>Security & Forensics Tools:</b>
 - Wireshark, Nmap, Burp Suite, MobSF, Frida, Objection, ADB, JADX, APKTool, QARK`);
     } 
-    else if (fullCmd === 'cat contact.json') {
+    else if (normalizedCmd === 'cat contact.json') {
       appendLine(`{
   "name": "Shivamani Boddupally",
   "role": "Cybersecurity & AI M.Tech Student",
@@ -134,8 +137,9 @@ function executeCommand(rawCmd) {
   "linkedin": "https://www.linkedin.com/in/shivamani-boddupally-41a4aa29b/"
 }`);
     } 
-    else if (fullCmd === 'nmap localhost') {
-      appendLine(`Starting Nmap 7.92 ( https://nmap.org ) at 2026-05-26 22:40 IST
+    else if (normalizedCmd === 'nmap localhost') {
+      appendLine(`<b>[Simulated Portfolio Demo Output - Not a Real Scan]</b>
+Starting Nmap 7.92 ( https://nmap.org ) at 2026-05-26 22:40 IST
 Nmap scan report for localhost (127.0.0.1)
 Host is up (0.00041s latency).
 Not shown: 995 closed tcp ports

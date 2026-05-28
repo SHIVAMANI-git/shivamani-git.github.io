@@ -1,15 +1,17 @@
 // ----------------------------------------------------
-// Write-up Modal Reader Logic & Data
+// Write-up & Project Modal Reader Logic & Data
 // ----------------------------------------------------
 const writeupModalOverlay = document.getElementById('writeupModalOverlay');
 const modalTitle = document.getElementById('modalTitle');
 const modalContent = document.getElementById('modalContent');
+let lastFocusedElement = null;
 
 const writeupsData = {
   1: {
     title: "APK Decompilation & Hooking via JADX & Frida",
     content: `
       <p>This write-up covers standard methodology for static and dynamic analysis of Android applications to audit cryptographic implementations or bypass simple anti-debugging protections.</p>
+      <blockquote><b>Disclaimer:</b> All testing was performed only on authorized lab applications and owned devices.</blockquote>
       
       <h3>1. Static Analysis using JADX-GUI</h3>
       <p>We decompile the target APK to read its raw Java classes and verify logic. Search for secure checks inside packages like <code>com.example.bank.SecurityCheck</code>:</p>
@@ -29,6 +31,7 @@ const writeupsData = {
     title: "Wireshark Log Analysis: Deciphering Web Attacks",
     content: `
       <p>Analyzing Packet Capture (PCAP) records is a core skill in security operations to identify breach vectors. In this lab, we inspect traffic logs detailing a target server attack.</p>
+      <blockquote><b>Disclaimer:</b> All testing was performed only on authorized lab applications and owned devices.</blockquote>
       
       <h3>1. Identifying SQL Injection</h3>
       <p>Using Wireshark filters, search for specific HTTP GET requests containing SQL operators:</p>
@@ -50,6 +53,7 @@ const writeupsData = {
     title: "Securing RAG Systems Against Prompt Injection",
     content: `
       <p>As Retrieval-Augmented Generation (RAG) is deployed in production corporate networks, attackers target retrieval inputs to bypass LLM instructions or access unauthorized documents.</p>
+      <blockquote><b>Disclaimer:</b> All testing was performed only on authorized lab applications and owned devices.</blockquote>
       
       <h3>1. Attack Vector: Context Escape</h3>
       <p>An attacker submits a query containing injection payloads that instruction-override the LLM during generation:</p>
@@ -153,10 +157,18 @@ function openWriteup(id) {
   if (writeupModalOverlay && modalTitle && modalContent) {
     const data = writeupsData[id];
     if (data) {
+      lastFocusedElement = document.activeElement;
       modalTitle.textContent = data.title;
+      // WARNING: Only use innerHTML here for trusted static content. Sanitize if content becomes dynamic.
       modalContent.innerHTML = data.content;
       writeupModalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
+      
+      // Accessibility: Set focus to close button when modal opens
+      const closeBtn = writeupModalOverlay.querySelector('.modal-close-btn');
+      if (closeBtn) {
+        closeBtn.focus();
+      }
     }
   }
 }
@@ -165,10 +177,18 @@ function openProjectDetails(id) {
   if (writeupModalOverlay && modalTitle && modalContent) {
     const data = projectsData[id];
     if (data) {
+      lastFocusedElement = document.activeElement;
       modalTitle.textContent = data.title;
+      // WARNING: Only use innerHTML here for trusted static content. Sanitize if content becomes dynamic.
       modalContent.innerHTML = data.content;
       writeupModalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
+      
+      // Accessibility: Set focus to close button when modal opens
+      const closeBtn = writeupModalOverlay.querySelector('.modal-close-btn');
+      if (closeBtn) {
+        closeBtn.focus();
+      }
     }
   }
 }
@@ -177,6 +197,12 @@ function closeWriteup() {
   if (writeupModalOverlay && writeupModalOverlay.classList.contains('active')) {
     writeupModalOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    
+    // Accessibility: Restore focus to active element trigger on close
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+      lastFocusedElement = null;
+    }
   }
 }
 
@@ -194,7 +220,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// Explicitly bind helper functions to window object for inline HTML event handling
+// Explicitly bind helper functions to window object for backwards compatibility
 window.openWriteup = openWriteup;
 window.openProjectDetails = openProjectDetails;
 window.closeWriteup = closeWriteup;
