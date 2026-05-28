@@ -63,8 +63,6 @@ if (contactForm) {
     submitBtn.textContent = 'Sending Message...';
     submitBtn.disabled = true;
     
-    // Public client-side Web3Forms key.
-    // NOTE: Domain restriction must be enabled in Web3Forms dashboard to protect this key from abuse.
     const accessKey = 'c844132e-cd0b-4bc0-87b9-6e009b54f720';
     
     try {
