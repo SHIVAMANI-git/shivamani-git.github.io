@@ -66,9 +66,97 @@ const writeupsData = {
   }
 };
 
+const projectsData = {
+  'cctv': {
+    title: "AI-Powered Video Forensic Evidence Analyzer",
+    content: `
+      <p>An AI-driven CCTV forensic analysis platform for detecting, tracking, filtering, and documenting persons and vehicles from surveillance footage using deep learning and forensic workflows.</p>
+      
+      <h3>Why I Built This</h3>
+      <p>Built to reduce manual CCTV review time and support digital forensic investigations with AI-assisted evidence analysis.</p>
+      
+      <h3>Key Features</h3>
+      <ul>
+        <li><b>Real-time Detection:</b> Object detection using YOLOv8 optimized for forensic frames.</li>
+        <li><b>Multi-object Tracking:</b> State-of-the-art tracking using ByteTrack to maintain target identity across perspectives.</li>
+        <li><b>Vehicle Analytics:</b> Color estimation and attributes detection of targeted cars.</li>
+        <li><b>Highlight Generation:</b> Automatic generation of short clips containing targets matching forensic filters.</li>
+        <li><b>Evidence Integrity:</b> Auto-generates SHA-256 hashes of input and output files to preserve chain of custody.</li>
+      </ul>
+
+      <h3>Outcomes & Metrics</h3>
+      <ul>
+        <li>Processed surveillance footage with <b>726 detections</b> across 90 analyzed frames.</li>
+        <li>Generated annotated output videos and filtered forensic highlights.</li>
+        <li>Automated PDF/JSON report generation with evidence integrity verification.</li>
+      </ul>
+    `
+  },
+  'graphrag': {
+    title: "Fully Local GraphRAG Question Answering Framework",
+    content: `
+      <p>A fully local GraphRAG framework for cybersecurity learning and social engineering analysis using graph-enhanced retrieval and local LLMs.</p>
+      
+      <h3>Why I Built This</h3>
+      <p>Built to explore relation-aware retrieval systems for cybersecurity education and source-grounded AI question answering.</p>
+      
+      <h3>Key Features</h3>
+      <ul>
+        <li><b>Fully Local:</b> Pipeline runs entirely on consumer hardware without sending data to cloud APIs.</li>
+        <li><b>LightRAG Integration:</b> Exploits dual-level graph structures (low-level entities and high-level relationships).</li>
+        <li><b>Ollama Orchestration:</b> Deploys local Mistral 7B and Nomic Embeddings seamlessly.</li>
+        <li><b>Relation-Aware QA:</b> Captures multi-hop connections across security manuals and texts.</li>
+      </ul>
+
+      <h3>Outcomes & Metrics</h3>
+      <ul>
+        <li>Constructed a graph index containing <b>1549 nodes</b> and <b>748 edges</b>.</li>
+        <li>Successfully achieved <b>15/15 successful evaluations</b> on cybersecurity domain questions.</li>
+        <li>Completely offline implementation ensuring zero risk of data leakage.</li>
+      </ul>
+    `
+  },
+  'mobile_sec': {
+    title: "Mobile Security & Forensic Analysis",
+    content: `
+      <p>An Android application vulnerability auditing and reverse-engineering pipeline for dynamic API hook audits and crypto inspections.</p>
+      
+      <h3>Why I Built This</h3>
+      <p>Built to understand reverse engineering workflows and test mobile applications for common security vulnerabilities (OWASP Mobile Top 10) and cryptographic misconfigurations.</p>
+      
+      <h3>Key Features</h3>
+      <ul>
+        <li><b>Static Analysis:</b> Decompilation and signature analysis using JADX and APKTool to map code logic and hardcoded values.</li>
+        <li><b>Dynamic Instrumentation:</b> Bypassed runtime controls (root check, SSL pinning) using Frida hooks and Objection.</li>
+        <li><b>Automated Security Auditing:</b> Integrated MobSF and QARK to run compliance checks on target builds.</li>
+        <li><b>Crypto Audits:</b> Identified weak cryptographic implementations (e.g. hardcoded AES keys, weak hashes).</li>
+      </ul>
+
+      <h3>Outcomes & Metrics</h3>
+      <ul>
+        <li>Successfully analyzed 5 target Android applications and documented vulnerabilities.</li>
+        <li>Implemented automated build script reporting system for fast security checks.</li>
+        <li>Presented findings to lab teams detailing runtime bypass techniques.</li>
+      </ul>
+    `
+  }
+};
+
 function openWriteup(id) {
   if (writeupModalOverlay && modalTitle && modalContent) {
     const data = writeupsData[id];
+    if (data) {
+      modalTitle.textContent = data.title;
+      modalContent.innerHTML = data.content;
+      writeupModalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+}
+
+function openProjectDetails(id) {
+  if (writeupModalOverlay && modalTitle && modalContent) {
+    const data = projectsData[id];
     if (data) {
       modalTitle.textContent = data.title;
       modalContent.innerHTML = data.content;
@@ -101,4 +189,5 @@ window.addEventListener('keydown', (e) => {
 
 // Explicitly bind helper functions to window object for inline HTML event handling
 window.openWriteup = openWriteup;
+window.openProjectDetails = openProjectDetails;
 window.closeWriteup = closeWriteup;

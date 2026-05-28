@@ -727,6 +727,71 @@ section {
   border-radius: 4px;
 }
 
+.project-thumbnail {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #080c12;
+  position: relative;
+}
+
+body.light-theme .project-thumbnail {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: #f1f5f9;
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-thumbnail img {
+  transform: scale(1.05);
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+body.light-theme .project-footer {
+  border-top-color: rgba(0, 0, 0, 0.04);
+}
+
+.project-footer .btn-sm {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.project-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.project-github-link:hover {
+  color: var(--accent-primary);
+}
+
+.project-github-link svg {
+  width: 16px;
+  height: 16px;
+}
+
 /* Education Timeline */
 .timeline {
   position: relative;
