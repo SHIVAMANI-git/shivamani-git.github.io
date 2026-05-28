@@ -60,6 +60,15 @@
   <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
+  <!-- Prevent theme flash (FOUC) by initializing theme class before body rendering -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+        document.body.classList.add('light-theme');
+      }
+    })();
+  </script>
 
   <!-- Floating Dock Navigation -->
   <div class="nav-dock-container">
